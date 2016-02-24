@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>1小时学会爬虫2——进阶篇 | fuhrerzm的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在入门篇里，我们调教了一个简单的爬虫，而对于那些需要登录的网站，我们也可以用一些简单粗暴的方法来爬，看了网上许多大神的微博爬虫，最后经过比较总结得出，用python的BeautifulSoup和requests库来登录微博的wap版最为实用。看过入门篇的话已经具备了基本知识，那么开始吧：123import requestsimport urllib, urllib2, cookielib, ref">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1小时学会爬虫2——进阶篇">
+<meta property="og:url" content="FuhrerMing.github.io/2016/02/11/20160211/index.html">
+<meta property="og:site_name" content="fuhrerzm的博客">
+<meta property="og:description" content="在入门篇里，我们调教了一个简单的爬虫，而对于那些需要登录的网站，我们也可以用一些简单粗暴的方法来爬，看了网上许多大神的微博爬虫，最后经过比较总结得出，用python的BeautifulSoup和requests库来登录微博的wap版最为实用。看过入门篇的话已经具备了基本知识，那么开始吧：123import requestsimport urllib, urllib2, cookielib, ref">
+<meta property="og:updated_time" content="2016-02-24T04:24:30.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1小时学会爬虫2——进阶篇">
+<meta name="twitter:description" content="在入门篇里，我们调教了一个简单的爬虫，而对于那些需要登录的网站，我们也可以用一些简单粗暴的方法来爬，看了网上许多大神的微博爬虫，最后经过比较总结得出，用python的BeautifulSoup和requests库来登录微博的wap版最为实用。看过入门篇的话已经具备了基本知识，那么开始吧：123import requestsimport urllib, urllib2, cookielib, ref">
+  
+    <link rel="alternative" href="/atom.xml" title="fuhrerzm的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/wo-v.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Fuhrer ZM</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">真名:zm.隔壁老王.猴赛雷</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我的tag——应用统计研究僧——伪.程序猿——B站直男(雾)——中二癌晚期</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Fuhrer ZM</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/wo-v.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Fuhrer ZM</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">真名:zm.隔壁老王.猴赛雷</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-20160211" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/11/20160211/" class="article-date">
+  	<time datetime="2016-02-11T12:00:32.000Z" itemprop="datePublished">2016-02-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      1小时学会爬虫2——进阶篇
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在入门篇里，我们调教了一个简单的爬虫，而对于那些需要登录的网站，我们也可以用一些简单粗暴的方法来爬，看了网上许多大神的微博爬虫，最后经过比较总结得出，用python的BeautifulSoup和requests库来登录微博的wap版最为实用。看过入门篇的话已经具备了基本知识，那么开始吧：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib, urllib2, cookielib, re</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup <span class="keyword">as</span> bs</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>装了这些库，对于<a href="https://www.baidu.com/baidu?word=BeautifulSoup&amp;ie=utf-8&amp;tn=myie2dg&amp;ch=6" target="_blank" rel="external">BeautifulSoup</a>，同样，自己点连接好好研究一下吧。然后定义一个类，对正则表达式熟悉的话，很容易看懂，我加了注释。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tool</span>:</span></span><br><span class="line">    <span class="comment">#去除img标签,7位长空格</span></span><br><span class="line">    removeat=re.compile(<span class="string">'@.+'</span>)</span><br><span class="line">    <span class="comment">#删除超链接标签</span></span><br><span class="line">    removeAddr = re.compile(<span class="string">'&lt;a.*?&gt;|&lt;/a&gt;'</span>)</span><br><span class="line">    <span class="comment">#把换行的标签换为\n</span></span><br><span class="line">    replaceLine = re.compile(<span class="string">'//'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replace</span><span class="params">(self,x)</span>:</span></span><br><span class="line">        x=re.sub(self.removeat,<span class="string">''</span>,x)</span><br><span class="line">        x = re.sub(self.removeAddr,<span class="string">""</span>,x)</span><br><span class="line">        x = re.sub(self.replaceLine,<span class="string">""</span>,x)</span><br><span class="line">        <span class="comment">#strip()将前后多余内容删除</span></span><br><span class="line">        <span class="keyword">return</span> x.strip()</span><br></pre></td></tr></table></figure></p>
+<p>然后重点来了，用BeautifulSoup找出提交登录表单的页面，当然你也可以F12，然后自己登陆一遍，再自己找，这里不推荐这样。最后把这个url打印出来，后面要用。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loginUrl  = bs(requests.get(weiboUrl).content).find(<span class="string">"div"</span>,&#123;<span class="string">"class"</span>:<span class="string">"ut"</span>&#125;).find(<span class="string">"a"</span>)[<span class="string">'href'</span>]</span><br><span class="line">origInfo  = bs(requests.get(loginUrl).content)</span><br><span class="line">loginInfo = origInfo.find(<span class="string">"form"</span>)[<span class="string">'action'</span>]</span><br><span class="line">loginpostUrl = <span class="string">'http://login.weibo.cn/login/'</span>+loginInfo</span><br><span class="line"><span class="keyword">print</span> loginpostUrl</span><br></pre></td></tr></table></figure></p>
+<p>最后填写post信息，建立会话，当然也可用urllib2和cookielib，就是常见的用cookie登录，不过你会发现，session的效果要远高于这样。唯一要注意的是，先登录微博，把账号设置为不需要验证码的地区，不然会让你填验证码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;</span><br><span class="line">            <span class="string">'Host'</span>: <span class="string">'login.weibo.cn'</span>,</span><br><span class="line">            <span class="string">'User-Agent'</span> : <span class="string">'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; BOIE9;ZHCN)'</span>,</span><br><span class="line">            <span class="string">'Referer'</span> : <span class="string">'http://login.weibo.cn/login/?ns=1&amp;revalid=2&amp;backURL=http%3A%2F%2Fweibo.cn%2F&amp;backTitle=%D0%C2%C0%CB%CE%A2%B2%A9&amp;vt='</span>,</span><br><span class="line">            <span class="comment">#刚才print的loginpostUrl#</span></span><br><span class="line">           &#125;</span><br><span class="line">postData =&#123;</span><br><span class="line">            <span class="string">'mobile'</span>:<span class="string">'你的账号'</span>,</span><br><span class="line">            origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"type"</span>:<span class="string">"password"</span>&#125;)[<span class="string">'name'</span>]: <span class="string">'你的密码'</span>,</span><br><span class="line">            <span class="string">'remember'</span>:<span class="string">'on'</span>,</span><br><span class="line">            <span class="string">'backURL'</span>:origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"name"</span>:<span class="string">"backURL"</span>&#125;)[<span class="string">'value'</span>],</span><br><span class="line">            <span class="string">'backTitle'</span>: origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"name"</span>:<span class="string">"backTitle"</span>&#125;)[<span class="string">'value'</span>],</span><br><span class="line">            <span class="string">'tryCount'</span>: origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"name"</span>:<span class="string">"tryCount"</span>&#125;)[<span class="string">'value'</span>],</span><br><span class="line">            <span class="string">'vk'</span>: origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"name"</span>:<span class="string">"vk"</span>&#125;)[<span class="string">'value'</span>],</span><br><span class="line">            <span class="string">'submit'</span>: origInfo.find(<span class="string">"form"</span>).find(<span class="string">"input"</span>,&#123;<span class="string">"name"</span>:<span class="string">"submit"</span>&#125;)[<span class="string">'value'</span>],</span><br><span class="line">            &#125;</span><br><span class="line">session = requests.session()</span><br><span class="line">req = session.post(loginpostUrl, data=postData, headers=headers)</span><br></pre></td></tr></table></figure></p>
+<p>最后还要我说吗，开爬吧，把从入门篇的代码搬过来就行。再预报一个坑，将来还会加上微博搜索，关键词检索之类的功能。这里爬了刘烨的微博。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cont1=[]</span><br><span class="line">cont2=[]</span><br><span class="line">tool=Tool()</span><br><span class="line">pagenum=range(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getcont</span><span class="params">(page)</span>:</span></span><br><span class="line">    bozhu =re.compile(<span class="string">'`&lt;div class="c.*?&lt;a href="/.*?\?vt=4"&gt;\s*(.*?)&lt;/a&gt;(.*?&lt;span class="ctt"&gt;\s*(.*?)&lt;/span&gt;).*?&lt;/div&gt;'</span>,re.S)`</span><br><span class="line">    imglist2 = re.findall(bozhu, page)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> imglist2:</span><br><span class="line">       cont1.append(tool.replace(item))</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> pagenum:</span><br><span class="line">  url=<span class="string">'http://weibo.cn/comment/CtPolB1fv?uid=3125046087&amp;rl=0&amp;vt=4&amp;page=%s'</span>%item</span><br><span class="line">  page=session.get(url).content</span><br><span class="line">  getcont(page)</span><br><span class="line"></span><br><span class="line">    file=open(<span class="string">"content.txt"</span>,<span class="string">"wb+"</span>)</span><br><span class="line">  <span class="keyword">for</span> item <span class="keyword">in</span> cont1:</span><br><span class="line">    out=<span class="string">'%-8s\n'</span>%item</span><br><span class="line">     file.write(out)</span><br></pre></td></tr></table></figure></p>
+<p>来看看效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@&#24576;&#24565;&#39532;&#25289;&#22810;&#32435;:&#10;#&#35834;&#19968;&#30422;&#19990;&#32654;&#30007;&#23376;#                                     &#10;-------------------------------------------------&#10;&#32993;&#27611;&#37233;&#21734;:&#10;&#21704;&#21704;&#21704; &#21776;&#20711;&#35834;&#19968;                                      &#10;-------------------------------------------------&#10;_&#28526;&#38795;&#36137;&#21334;&#26426;:&#10;&#28982;&#32780;&#22312;&#35834;&#19968;&#38754;&#21069;&#36125;&#32819;&#36133;&#20102;[&#21941;&#21941;]                   &#10;-------------------------------------------------&#10;mei&#38634;&#26757;mei:&#10;&#20182;&#30127;&#20102;[&#40657;&#32447;]                                           &#10;-------------------------------------------------&#10;eating_ZZZ:&#10;&#36824;&#38647;&#38899;&#23546; &#20320;&#37117;&#35753;&#25105;&#20204;&#23567;&#28151;&#34880;&#30475;&#30340;&#21861;&#38271;&#22823;&#30340;     &#10;-------------------------------------------------&#10;&#22859;&#26007;&#22859;&#26007;&#26446;&#23567;&#35199;:&#10;&#22269;&#31929;&#22269;&#31929;[&#36190;]                                           &#10;-------------------------------------------------&#10;&#38446;&#26195;&#23159;&#23159;:&#10;&#38283;&#22987;&#30475;&#21040;&#23601;&#32879;&#24819;&#21040;&#20102;&#35997;&#29246;[&#31505;cry]                   &#10;-------------------------------------------------&#10;&#24618;&#20154;LiFeng:&#10;&#21704;&#21704;&#65292;&#35834;&#19968;&#22826;&#21487;&#29233;&#25289;@&#20854;&#20182;&#29992;&#25143;</span><br></pre></td></tr></table></figure><br>怎么样，诺一还是萌萌的吧。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/02/20160202/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1小时学会爬虫1——起步篇</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20160211" data-title="1小时学会爬虫2——进阶篇" data-url="FuhrerMing.github.io/2016/02/11/20160211/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fuhrerzm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Fuhrer ZM
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

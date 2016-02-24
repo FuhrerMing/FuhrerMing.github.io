@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>1小时学会爬虫1——起步篇 | fuhrerzm的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作为一枚学应用统计起步的数据厨，一开始我只会一些统计理论和R语言，然而在大数据，数据分析，数据挖掘大红大热的今天，你会些统计理论是远远不够的，所以我踏上了神奇程序猿之路。作为一个大学c语言成绩惨不忍睹的新手，我一开始就跟网上的老司机学起了爬虫，说实在的，python这门语言真的太好用了，跟着老司机的程序走了几遍之后，自己的code也像那么回事了，在这里跟大家分享一下自己编的一个小爬虫。首先得做如下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1小时学会爬虫1——起步篇">
+<meta property="og:url" content="FuhrerMing.github.io/2016/02/02/20160202/index.html">
+<meta property="og:site_name" content="fuhrerzm的博客">
+<meta property="og:description" content="作为一枚学应用统计起步的数据厨，一开始我只会一些统计理论和R语言，然而在大数据，数据分析，数据挖掘大红大热的今天，你会些统计理论是远远不够的，所以我踏上了神奇程序猿之路。作为一个大学c语言成绩惨不忍睹的新手，我一开始就跟网上的老司机学起了爬虫，说实在的，python这门语言真的太好用了，跟着老司机的程序走了几遍之后，自己的code也像那么回事了，在这里跟大家分享一下自己编的一个小爬虫。首先得做如下">
+<meta property="og:updated_time" content="2016-02-24T04:19:30.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1小时学会爬虫1——起步篇">
+<meta name="twitter:description" content="作为一枚学应用统计起步的数据厨，一开始我只会一些统计理论和R语言，然而在大数据，数据分析，数据挖掘大红大热的今天，你会些统计理论是远远不够的，所以我踏上了神奇程序猿之路。作为一个大学c语言成绩惨不忍睹的新手，我一开始就跟网上的老司机学起了爬虫，说实在的，python这门语言真的太好用了，跟着老司机的程序走了几遍之后，自己的code也像那么回事了，在这里跟大家分享一下自己编的一个小爬虫。首先得做如下">
+  
+    <link rel="alternative" href="/atom.xml" title="fuhrerzm的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/wo-v.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Fuhrer ZM</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">真名:zm.隔壁老王.猴赛雷</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我的tag——应用统计研究僧——伪.程序猿——B站直男(雾)——中二癌晚期</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Fuhrer ZM</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/wo-v.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Fuhrer ZM</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">真名:zm.隔壁老王.猴赛雷</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-20160202" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/02/20160202/" class="article-date">
+  	<time datetime="2016-02-02T13:04:32.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      1小时学会爬虫1——起步篇
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一枚学应用统计起步的数据厨，一开始我只会一些统计理论和R语言，然而在大数据，数据分析，数据挖掘大红大热的今天，你会些统计理论是远远不够的，所以我踏上了神奇程序猿之路。<br>作为一个大学c语言成绩惨不忍睹的新手，我一开始就跟网上的老司机学起了爬虫，说实在的，python这门语言真的太好用了，跟着老司机的程序走了几遍之后，自己的code也像那么回事了，在这里跟大家分享一下自己编的一个小爬虫。首先得做如下准备：</p>
+<ul>
+<li><p>你得大概了解python，会一些基本语句，最起码得会安装库吧，弄明白这些——20min</p>
+</li>
+<li><p>看一看正则表达式，这里是地址<a href="http://baike.baidu.com/link?url=AVPz3GdcYS6ZkYxkaJYgUqZQqyDD7phduep8xLulyi5_FBO-oCgLc0A2Pgst9FstKmMeTq-9iJiWAK0KXmgYiq" target="_blank" rel="external">正则表达式</a>,这大概需要——10min。</p>
+</li>
+<li><p>看别人的代码，制定自己的匹配规则——20min。</p>
+</li>
+<li><p>修改code，调试——10min。</p>
+</li>
+</ul>
+<a id="more"></a>
+<p>怎么样，满打满算，1小时就可以让自己的爬虫跑起来。具体看一下这个网易新闻的爬虫吧，这就是所谓的舆情分析第一步，至于怎么处理爬到的数据，今后会开一个统计知识篇专门讲,先把坑挖下XD。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2,urllib,re,requests,gzip</span><br><span class="line"><span class="keyword">from</span> StringIO <span class="keyword">import</span> StringIO</span><br></pre></td></tr></table></figure></p>
+<p>先安装这些库，如果你有兴趣，可以多学习urllib和美丽汤BeautifulSoup，爬虫经常用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpage</span><span class="params">(url)</span>:</span></span><br><span class="line">    request = urllib2.Request(url)</span><br><span class="line">    request.add_header(<span class="string">'Accept-encoding'</span>, <span class="string">'gzip'</span>)</span><br><span class="line">    response = urllib2.urlopen(request)</span><br><span class="line">    <span class="keyword">if</span> response.info().get(<span class="string">'Content-Encoding'</span>) == <span class="string">'gzip'</span>:</span><br><span class="line">        buf = StringIO( response.read())</span><br><span class="line">        f = gzip.GzipFile(fileobj=buf)</span><br><span class="line">        data = f.read()</span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+<p>定义 getpage函数，这里建议一定要看看<a href="http://www.cnblogs.com/yuxc/archive/2011/08/01/2123995.html" target="_blank" rel="external">urllib2</a>和<a href="http://www.cnblogs.com/sysu-blackbear/p/3629420.html" target="_blank" rel="external">urllib</a>这两个库，会很好懂这个函数，我们不是细讲python，大家点连接自己看吧。至于StringIO那几行，则是在网页内容为gzip压缩的情况下，先缓存字符串再解压缩。不懂这些也没关系，对于非登录类的网站，会urllib2和urllib就够了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">page=range(<span class="number">1</span>,<span class="number">100</span>)</span><br><span class="line">cont1=[]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> page:</span><br><span class="line"> url=<span class="string">'http://comment.news.163.com/cache/newlist/news_shehui7_bbs/AVFI4JS700011229_%s.html'</span>%item</span><br><span class="line"> data=getpage(url)</span><br><span class="line"> pinlun =re.compile(<span class="string">'"\d":\&#123;"f":"网易(.*?)网友.*?(?!的原贴).*?","b":"(.*?)"'</span>,re.S)<span class="comment">#这里就是正则表达式#</span></span><br><span class="line"> imglist1 = re.findall(pinlun, data)</span><br><span class="line"> <span class="keyword">for</span> i <span class="keyword">in</span> imglist1:</span><br><span class="line">     cont1.append(<span class="string">'%s网友:\n评论：%s\n\n'</span>%(i[<span class="number">0</span>],i[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">file=open(<span class="string">"wangyiplun.txt"</span>,<span class="string">"wb+"</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cont1:</span><br><span class="line">    out=<span class="string">'%-8s\n'</span>%item</span><br><span class="line">    file.write(out)</span><br></pre></td></tr></table></figure>
+<p>然后就开始爬吧，用上面的code。这里有个经验，对于这类的爬虫，一般wap版比较好爬，因为html的结构比较简单，可以很容易发现干货都藏在哪里XD,这里我就直接选了网易新闻的wap版，反正内容都一样。然后怎么存无所谓了，我就直接暴力存到一个txt里了。怎么样，很好玩吧，最后效果是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27993;&#27743;&#30465;&#28201;&#24030;&#24066;&#25163;&#26426;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#24613;&#20572;&#25353;&#38062;&#21602;&#65311;&#10;&#10;&#10;&#28246;&#21271;&#30465;&#27494;&#27721;&#24066;&#25163;&#26426;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#31351;&#23628;&#24050;&#32463;&#27809;&#26007;&#24535; 3&#26465;&#22238;&#22797;&#31616;&#30452;&#22914;&#20667;&#36924; &#24597;&#29241;&#19981;&#32473;&#39592;&#22836;&#20320;&#21507;&#36824;&#26159;&#24590;&#20040;&#20102; &#29241;&#35753;&#20320;&#27599;&#26465;&#37117;&#22238;&#22797; &#23567;&#27604;&#23401;&#23376;&#23630;&#21507;&#22810;&#20102;&#19978;&#21040;&#22836;&#20102; &#27809;&#24847;&#24605; &#23601;&#36825;&#20320;&#36824;&#21483;&#26495;&#65311;&#10;&#10;&#10;&#40657;&#40857;&#27743;&#30465;&#29281;&#20025;&#27743;&#24066;&#25163;&#26426;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#20667;&#31351;B &#27515;&#27809;&#27515;&#35767;&#65311;&#10;&#10;&#10;&#28246;&#21271;&#30465;&#27494;&#27721;&#24066;&#25163;&#26426;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#20667;&#29399;&#27809;&#20154;&#31649;&#20986;&#26469;&#21040;&#22788;&#21676;&#20154; &#30495;&#26159;&#21487;&#24597; &#23567;&#24515;&#20320;&#30340;&#23478;&#20154;&#34987;&#25758;&#27515; &#22825;&#22825;&#39569;&#33258;&#34892;&#36710;&#30005;&#21160;&#36710;&#10;&#10;&#10;&#38485;&#35199;&#30465;&#35199;&#23433;&#24066;&#25163;&#26426;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#20002;&#38485;&#35199;&#20154;&#30340;&#33080;&#65292;&#19981;&#36807;&#28205;&#21335;&#20154;&#37117;&#26159;&#20123;&#20108;&#38180;&#23376;&#65292;&#26412;&#26469;&#23601;&#26159;&#38485;&#35199;&#20013;&#30340;&#22403;&#22334;&#65281;&#10;&#10;&#10;&#19978;&#28023;&#24066;&#32593;&#21451;:&#10;&#35780;&#35770;&#65306;&#30475;&#39030;&#20320;&#30340;149&#20010;&#29399;B&#21943;&#23376;&#36135;&#12290;&#30495;&#24212;&#35813;&#20840;&#37096;&#20142;&#20986;&#26469;</span><br></pre></td></tr></table></figure>
+<p>看评论还是挺有意思的吧2333333。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/11/20160211/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          1小时学会爬虫2——进阶篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20160202" data-title="1小时学会爬虫1——起步篇" data-url="FuhrerMing.github.io/2016/02/02/20160202/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fuhrerzm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Fuhrer ZM
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
